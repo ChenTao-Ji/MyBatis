@@ -13,6 +13,6 @@ public class MySqlSession {
     }
 
     public <T> T getMapper(Class<T> clazz) {
-        return (T) Proxy.newProxyInstance(clazz.getClassLoader(), new Class[]{clazz}, new MyMapperProxy(myConfiguration, this));
+        return (T) Proxy.newProxyInstance(clazz.getClassLoader(), new Class[]{clazz}, new MyMapperProxy(clazz.getSimpleName(), myConfiguration, this));
     }
 }

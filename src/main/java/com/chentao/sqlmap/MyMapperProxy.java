@@ -9,11 +9,14 @@ import java.util.List;
 
 public class MyMapperProxy implements InvocationHandler {
 
+    private String name;
+
     private MySqlSession mySqlSession;
 
     private MyConfiguration myConfiguration;
 
-    public MyMapperProxy (MyConfiguration myConfiguration, MySqlSession mySqlSession) {
+    public MyMapperProxy (String name, MyConfiguration myConfiguration, MySqlSession mySqlSession) {
+        this.name = name;
         this.myConfiguration = myConfiguration;
         this.mySqlSession = mySqlSession;
     }
